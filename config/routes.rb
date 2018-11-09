@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
-  
+  resources :posts, only: [:index, :show]
+
   if defined? Admin::Engine
-    mount BlogEngine::Engine, at: '/admin'
+    mount Admin::Engine, at: '/admin'
   end
 end
